@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% if jobs is not empty %}
+      <p>Here are all of your jobs:</p>
+      <ul>
+        {% for job in jobs %}
+          <li>{{ job.getTitle }}</li>
+          <li>{{ job.getDescription }}</li>
+          <li>{{ job.getLength }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <form action='/jobs' method='post'>
+      <label for='title'>Job Title</label>
+      <input id='title' name='title' type='text'>
+
+      <label for='description'>Job Description</label>
+      <input id='description' name='description' type='text'>
+
+      <label for='length'>Job Length</label>
+      <input id='length' name='length' type='text'>
+
+      <button type='submit'>Add Job</button>
+    </form>
+
+  </body>
+</html>
